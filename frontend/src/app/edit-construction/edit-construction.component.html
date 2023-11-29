@@ -1,0 +1,70 @@
+<app-layout>
+    <h2>Edit construction of project number: {{currentConstruction?.id!}}</h2>
+    <div class="d-flex justify-content-center align-items-center">
+        <form *ngIf="editConstructionFormGroup" (ngSubmit)="onSubmitEdit()" [formGroup]="editConstructionFormGroup">
+            
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-6 align-items-center justify-content-center d-flex"> Architect </div>
+                    
+                    <mat-form-field appearance="fill" class="col-4">
+                        <input formControlName="architectFormControl" required matInput>
+                    </mat-form-field>
+                </div>
+            
+                <div class="row">
+                    <div class="col-6 align-items-center justify-content-center d-flex"> Contractor </div>
+                    
+                    <mat-form-field appearance="fill" class="col-4">
+                        <input formControlName="contractorFormControl" required matInput>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 align-items-center justify-content-center d-flex"> Civil Engineer </div>
+                    
+                    <mat-form-field appearance="fill" class="col-4">
+                        <input formControlName="civilEngineerFormControl" required matInput>
+                    </mat-form-field>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6 align-items-center justify-content-center d-flex"> Number of Subcontractors </div>
+                    
+                    <mat-form-field appearance="fill" class="col-4">
+                        <input formControlName="subcontractorsFormControl" type="number" matInput>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 align-items-center justify-content-center d-flex"> Progress </div>
+                    
+                    <div class="col-4 align-items-center d-flex">
+                        <div class="col-5">
+                            <mat-slider
+                            [max]="max"
+                            [min]="min"
+                            [step]="step"
+                            [discrete]="thumbLabel"
+                            [showTickMarks]="showTicks">
+                                <input matSliderThumb formControlName="progressFormControl" #slider>
+                            </mat-slider>
+                        </div>
+                        <div class="col-1">
+                            <label class="example-value-label">{{slider.value}}%</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row align-items-center justify-content-center d-flex">
+                    <button type="submit" class="btn btn-block" style="background-color: black; color: white; margin-top: 5%;">Submit</button>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+</app-layout>

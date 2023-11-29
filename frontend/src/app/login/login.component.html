@@ -1,0 +1,25 @@
+<body>
+  <div class="login-container">
+    <h2 class="text-center mb-4">Login</h2>
+    <form (ngSubmit)="onSubmitLogin()" [formGroup]="loginFormGroup" class="text-center">
+
+      <mat-form-field appearance="outline">
+        <input formControlName="emailFormControl" required matInput placeholder="Email">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input formControlName="passwordFormControl" type="password" matInput placeholder="Password">
+      </mat-form-field>
+      
+      <button type="submit" class="btn btn-block" style="background-color: black; color: white">Login</button>
+
+      <div class="margin">
+        <a routerLink="/signup" style="color: black">Don't have an account?</a>
+      </div>
+
+      <div *ngIf= "formSubmitted && loginFormGroup.invalid" class="error-message">
+        Please fill out all the required fields.
+      </div>
+    </form>
+  </div>
+</body>

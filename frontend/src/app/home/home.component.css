@@ -1,0 +1,46 @@
+h2 {
+    text-align: center;
+    margin-top: 2%;
+}
+
+h4 {
+    margin: 2%;
+}
+
+/* .custom-list-item {
+    font-size: 130%;
+    margin-left: 1%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  } */
+
+.align-center {
+    text-align: center;
+}
+
+.margin-top {
+    margin-top: 3%;
+}
+
+.image-community {
+    width: 100%;
+    height: 60%;
+    margin-bottom: 5%;
+}
+
+.center-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+}
+
+.custom-max-width {
+    max-width: 60%;
+    margin: auto;
+  }
+
+.list-max-width {
+    max-width: 80%;
+    margin: auto;
+}

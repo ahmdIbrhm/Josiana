@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f8f9fa;
+}
+
+.login-container {
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+
+.margin{
+  margin: 3%;
+}
+
+mat-form-field {
+  width: 80%;
+}
+
+button{
+  width: 80%;
+  margin: auto;
+}

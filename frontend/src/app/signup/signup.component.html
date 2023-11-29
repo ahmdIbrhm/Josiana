@@ -1,0 +1,47 @@
+<body>
+  <div class="signup-container d-flex justify-content-center align-items-center">
+    <div>
+      <h2 class="text-center mb-4">Signup</h2>
+      
+      <form (ngSubmit)="onSubmitSignup()" [formGroup]="signupFormGroup" class="text-center">
+
+        <mat-form-field appearance="fill">
+          <input formControlName="nameFormControl" required matInput placeholder="Full Name">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Role</mat-label>
+          <mat-select required formControlName="roleFormControl">
+            <mat-option value="Citizen">Citizen</mat-option>
+            <mat-option value="NGO">NGO</mat-option>
+            <mat-option value="PA">Public Authority</mat-option>
+          </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+          <input formControlName="phoneFormControl" required matInput placeholder="Phone Number">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input formControlName="emailFormControl" required matInput placeholder="Email">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <input formControlName="passwordFormControl" type="password" required matInput placeholder="Password">
+        </mat-form-field>
+
+        <button type="submit" class="btn btn-block" style="background-color: black; color: white">Signup</button>
+        
+        <div class="margin">
+          Already a member?
+          <a routerLink="/login" style="color: black">Log in</a>
+        </div>
+
+        <div *ngIf= "formSubmitted && signupFormGroup.invalid" class="error-message">
+          Please fill out all the required fields.
+        </div>
+
+      </form>
+    </div>
+  </div>
+</body>

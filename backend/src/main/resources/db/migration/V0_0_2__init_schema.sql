@@ -1,0 +1,2 @@
+ALTER TABLE users
+ALTER COLUMN type TYPE varchar(100);

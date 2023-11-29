@@ -1,0 +1,54 @@
+<app-layout>
+  <div>
+    <h2 class="center-text">Engage in the reconstruction of your city!</h2>
+  </div>
+  <div class="container">
+    <div>
+      <h4>About the platform</h4>
+    </div>
+
+    <div class="row container d-flex">
+      <div *ngFor="let item of homeSentences">
+          <p class="col-sm" style="font-size: 130%;margin-left: 5%;">&#x2022; {{item}}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <img class="img-fluid center-image" [src]=imgRawsha>
+    </div>
+
+    <div>
+      <h4>Our community</h4>
+    </div>
+
+    <div class="container margin-top">
+      <div class="row">
+        <div class="col-sm" *ngFor="let item of communities">
+          <img class="img-fluid image-community" [src]="item.image">
+          <h5 class="align-center">{{item.title}}</h5>
+          <b class="align-center">{{item.text}}</b>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2>Reconstruction Projects</h2>
+    </div>
+
+    <div class="row">
+      <img class="img-fluid center-image" [src]=imgReconstruction>
+    </div>
+
+    <div>
+      <h5 class="d-flex align-items-center justify-content-center">Listed Projects</h5>
+    </div>
+
+    <div class="container d-flex align-items-center justify-content-center">
+      <div class="text-center custom-max-width">
+        <b>This area is reserved for informing the community about renovation projects portfolios monitored by the NGOs and the municipality</b>
+      </div>
+    </div>
+
+
+  </div>
+</app-layout>

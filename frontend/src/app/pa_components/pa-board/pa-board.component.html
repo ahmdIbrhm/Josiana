@@ -1,0 +1,73 @@
+<app-layout>
+    <div class="container">
+        <div>
+            <div class="row">
+                <h4>Constructions</h4>
+            </div>
+            <div class="row">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                    <ng-container matColumnDef="ngo">
+                        <th mat-header-cell *matHeaderCellDef> NGO </th>
+                        <td mat-cell *matCellDef="let element"> 
+                            {{element.ngo.name}} 
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="project">
+                    <th mat-header-cell *matHeaderCellDef> Project </th>
+                    <td mat-cell *matCellDef="let element"> 
+                        {{element.project.id}} 
+                    </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="architect">
+                    <th mat-header-cell *matHeaderCellDef> Architect </th>
+                    <td mat-cell *matCellDef="let element"> {{element.architect}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="contractor">
+                    <th mat-header-cell *matHeaderCellDef> Contractor </th>
+                    <td mat-cell *matCellDef="let element"> {{element.contractor}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="civilEngineer">
+                    <th mat-header-cell *matHeaderCellDef> Civil Engineer </th>
+                    <td mat-cell *matCellDef="let element"> {{element.civilEngineer}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="numberOfSubcontractors">
+                        <th mat-header-cell *matHeaderCellDef> Subcontractors </th>
+                        <td mat-cell *matCellDef="let element"> {{element.numberOfSubcontractors}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="progress">
+                        <th mat-header-cell *matHeaderCellDef> Progress </th>
+                        <td mat-cell *matCellDef="let element"> {{element.progress}}%</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="decision">
+                        <th mat-header-cell *matHeaderCellDef> Decision </th>
+                        <td mat-cell *matCellDef="let element"> 
+                            <div *ngIf="element.decision !== 'PENDING'; else pending">
+                                {{element.decision}}
+                            </div>
+                            <ng-template #pending class="row">
+                                <button class="btn col-5" style="background-color: lightgreen; color: white" (click)="acceptConstruction(element.constructionId, true)">
+                                    Accept
+                                </button>
+                                <span class="col-2"></span>
+                                <button class="btn col-5" style="background-color: red; color: white" (click)="acceptConstruction(element.constructionId, false)">
+                                    Decline
+                                </button>
+                            </ng-template>
+                        </td>
+                    </ng-container>
+                
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</app-layout>

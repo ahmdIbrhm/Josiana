@@ -1,0 +1,55 @@
+<app-layout>
+    <div class="container">
+        <div>
+            <div class="row">
+                <h4>Constructions</h4>
+            </div>
+            <div class="row">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                    <ng-container matColumnDef="ngo">
+                        <th mat-header-cell *matHeaderCellDef> NGO </th>
+                        <td mat-cell *matCellDef="let element"> 
+                            {{element.ngo.name}} 
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="project">
+                    <th mat-header-cell *matHeaderCellDef> Project </th>
+                    <td mat-cell *matCellDef="let element"> 
+                        {{element.project.id}} 
+                    </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="architect">
+                    <th mat-header-cell *matHeaderCellDef> Architect </th>
+                    <td mat-cell *matCellDef="let element"> {{element.architect}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="contractor">
+                    <th mat-header-cell *matHeaderCellDef> Contractor </th>
+                    <td mat-cell *matCellDef="let element"> {{element.contractor}} </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="civilEngineer">
+                    <th mat-header-cell *matHeaderCellDef> Civil Engineer </th>
+                    <td mat-cell *matCellDef="let element"> {{element.civilEngineer}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="numberOfSubcontractors">
+                        <th mat-header-cell *matHeaderCellDef> Subcontractors </th>
+                        <td mat-cell *matCellDef="let element"> {{element.numberOfSubcontractors}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="progress">
+                        <th mat-header-cell *matHeaderCellDef> Progress </th>
+                        <td mat-cell *matCellDef="let element"> {{element.progress}}%</td>
+                    </ng-container>
+                
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</app-layout>
