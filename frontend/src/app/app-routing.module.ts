@@ -10,9 +10,9 @@ import { CitizenBoardComponent } from './citizen_components/citizen-board/citize
 import { AuthGuard } from './_guard/auth_guard';
 import { RoleGuard } from './_guard/role_guard';
 import { RestrictedScreenComponent } from './restricted-screen/restricted-screen.component';
-import { AdmissionComponent } from './admission/admission.component';
 import { EditConstructionComponent } from './edit-construction/edit-construction.component';
 import { ListOfNgosComponent } from './pa_components/list-of-ngos/list-of-ngos.component';
+import { CreateProjectComponent } from './pa_components/create-project/create-project.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -24,9 +24,9 @@ const routes: Routes = [
   { path: 'ngo/board', component: NgoBoardComponent, canActivate: [AuthGuard, RoleGuard]},
   { path: 'citizen/board', component: CitizenBoardComponent, canActivate: [AuthGuard, RoleGuard]},
   { path: 'restricted-screen', component: RestrictedScreenComponent},
-  { path: 'admission', component: AdmissionComponent},
   { path: 'edit-construction/:constructionId', component: EditConstructionComponent},
-  { path: 'pa/list-of-ngos', component: ListOfNgosComponent}
+  { path: 'pa/list-of-ngos', component: ListOfNgosComponent},
+  { path: 'pa/create-project', component: CreateProjectComponent}
 ];
 
 @NgModule({

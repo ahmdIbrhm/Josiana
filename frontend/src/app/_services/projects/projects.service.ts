@@ -19,4 +19,8 @@ export class ProjectsService {
   getAllFreeProjects() : Observable<Project[]>{
     return this.http.get<Project[]>(PROJECTS_API, httpOptions)
   }
-}
+
+  createProject(projectId: number): Observable<any>{
+    return this.http.post(PROJECTS_API, projectId, httpOptions)
+  }
+ }

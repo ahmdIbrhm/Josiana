@@ -22,7 +22,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { HeaderComponent } from './shared/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AdmissionComponent } from './admission/admission.component';
 import {MatSelectModule} from '@angular/material/select'
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
@@ -36,6 +35,7 @@ import { ApplyProjectDialogComponent } from './apply-project-dialog/apply-projec
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ListOfNgosComponent } from './pa_components/list-of-ngos/list-of-ngos.component';
+import { CreateProjectComponent } from './pa_components/create-project/create-project.component';
 
 @NgModule({
   declarations: [
@@ -49,12 +49,12 @@ import { ListOfNgosComponent } from './pa_components/list-of-ngos/list-of-ngos.c
     CitizenBoardComponent,
     RestrictedScreenComponent,
     HeaderComponent,
-    AdmissionComponent,
     FooterComponent,
     LayoutComponent,
     EditConstructionComponent,
     ApplyProjectDialogComponent,
     ListOfNgosComponent,
+    CreateProjectComponent,
   ],
   imports: [
     BrowserModule,

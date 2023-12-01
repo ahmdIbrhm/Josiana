@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit{
 
     this.authService.register(name, email, password, role, phone).subscribe({
       next: data => {
-        this.router.navigate(['admission']);
+        this.router.navigate(['/login']);
       },
     });
   }

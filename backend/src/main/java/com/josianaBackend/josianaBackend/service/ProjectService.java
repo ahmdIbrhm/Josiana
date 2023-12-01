@@ -17,11 +17,15 @@ public class ProjectService {
     public List<Project> getAllAvailableProjects() {
         return projectRepository.findAvailableProjects();
     }
+
     public Project getProject(long id) {
-        return projectRepository.findById(id).orElseThrow();
+        return projectRepository.findById(id).orElse(null);
     }
 
     public Project createProject(Project project) {
-        return projectRepository.save(project);
+        Project existingProject = getProject(project.getId());
+        if (existingProject == null)
+            return projectRepository.save(project);
+        return null;
     }
 }
