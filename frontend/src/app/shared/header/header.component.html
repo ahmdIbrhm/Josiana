@@ -2,27 +2,27 @@
     <span>Josiana</span>
     <span class="spacer"></span>
     
+    
     <div *ngIf="isPa()">
       <button mat-button routerLink="/pa/board">Board</button>
       <button mat-button routerLink="/pa/list-of-ngos">List of NGOs</button>
       <button mat-button routerLink="/pa/create-project">Create a project</button>
+      <button mat-button (click)="goToBuildings()">Buildings</button>
     </div>
     
     <div *ngIf="isNgo()">
       <button mat-button routerLink="/ngo/board">Board</button>
-      <!-- <button mat-button routerLink="/ngo/list-of-ngos">List of NGOs</button> -->
+      <button mat-button (click)="goToSurvey()">Go To Survey</button>
+      <button mat-button (click)="goToBuildings()">Buildings</button>
     </div>
 
     <div *ngIf="isCitizen()">
       <button mat-button routerLink="/citizen/board">Board</button>
-      <!-- <button mat-button routerLink="/citizen/list-of-ngos">List of NGOs</button> -->
+      <button mat-button (click)="goToSurvey()">Take Survey</button>
     </div>
-
 
     <button mat-button routerLink="/home">Home</button>
     <button mat-button *ngIf="!isLoggedIn()" routerLink="/login">Login</button>
     <button mat-button *ngIf="isLoggedIn()" (click)="logout()">Sign Out</button>
-    <button mat-icon-button *ngIf="isLoggedIn()" routerLink="/profile">
-      <mat-icon>account_circle</mat-icon>
-    </button>
+    <span></span>
 </mat-toolbar>

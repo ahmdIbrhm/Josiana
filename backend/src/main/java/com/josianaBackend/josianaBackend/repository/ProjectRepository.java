@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, Long> {
 
-    @Query("SELECT p FROM Project p WHERE p.id NOT IN (SELECT c.project.id FROM Construction c)")
+    @Query("SELECT p FROM Project p WHERE p.id NOT IN (SELECT c.project.id FROM Construction c where c.decision = 'ACCEPTED')")
     List<Project> findAvailableProjects();
 
 }
